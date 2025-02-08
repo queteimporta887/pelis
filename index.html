@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Matrix</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Biblioteca Matrix</h1>
+            <div class="type-selector">
+                <button class="type-button active" data-type="movie">
+                    <span class="icon">🎬</span> Películas
+                </button>
+                <button class="type-button" data-type="series">
+                    <span class="icon">📺</span> Series
+                </button>
+            </div>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Buscar...">
+                <button class="add-button">
+                    <span class="icon">➕</span> Agregar
+                </button>
+            </div>
+        </header>
+
+        <div class="media-grid" id="mediaGrid"></div>
+
+        <div class="modal" id="addModal">
+            <div class="modal-content">
+                <button class="close-button">✕</button>
+                <h2 id="modalTitle">Agregar Nueva Película</h2>
+                <form id="mediaForm">
+                    <div class="form-group">
+                        <input type="text" name="title" placeholder="Título" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="description" placeholder="Descripción" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="rating" min="1" max="5" placeholder="Calificación (1-5)" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="url" name="poster" placeholder="URL del Poster" required>
+                    </div>
+                    
+                    <div id="movieFields" class="form-group">
+                        <input type="url" name="movieUrl" placeholder="URL de la Película">
+                    </div>
+
+                    <div id="seriesFields" style="display: none;">
+                        <div id="seasonsContainer"></div>
+                        <button type="button" class="add-season-button">
+                            <span class="icon">➕</span> Agregar Temporada
+                        </button>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="save-button">Guardar</button>
+                        <button type="button" class="cancel-button">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
